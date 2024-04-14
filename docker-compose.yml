@@ -1,0 +1,20 @@
+version: '3'
+services:
+  kimchi-service-discovery:
+    container_name: kimchi-service-discovery
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - kimchi-network
+    ports:
+      - 8761:8761
+
+networks:
+  kimchi-network:
+    external: true
+
+# networks:
+#   kimchi-network:
+#     name: kimchi-network
+#     driver: bridge
